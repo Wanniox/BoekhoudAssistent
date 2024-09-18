@@ -1,0 +1,189 @@
+﻿@model BoekhoudAssistent.Models.IndexViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>BoekhoudAssistent</title>
+</head>
+<body>
+    @if (ViewData["table"] == null) 
+    {
+        <h2>Selectiescherm</h2>
+        <form id="target" method="get" asp-action="Index" asp-controller="Boekhoud">
+            <div class="form-group">
+                <label for="GJAHR">Boekjaar:</label>
+                <select class="form-control" id="GJAHR" name="GJAHR">
+                    @for (int i = 1900; i <= DateTime.Now.Year; i++)
+                    {
+                        <option>@i</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="BUKRS">Bedrijfsnummer:</label>
+                <select class="form-control" id="BUKRS" name="BUKRS">
+                    @foreach (BKFP item in Model.BKFP)
+                    {
+                        <option>@item.BUKRS</option>
+                    }
+                    @foreach (BSEG item in Model.BSEG)
+                    {
+                        <option>@item.BUKRS</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Documentnummer van boekhoudingsdocument (range):</label>
+                <div class="input-group">
+                    <label for="BELNR" class="custom-label">Beginwaarde:</label>
+                    <select class="form-control" id="BELNR" name="BELNR">
+                    @foreach (BKFP item in Model.BKFP)
+                    {
+                        <option>@item</option>
+                    }
+                    @foreach (BSEG item in Model.BSEG)
+                    {
+                            
+                    }
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="BELNR2" class="custom-label">Eindwaarde:</label>
+                    <select class="form-control" id="BELNR2" name="BELNR2">
+                    @for (int i = 1900; i <= DateTime.Now.Year; i++)
+                    {
+                        @if (i==DateTime.Now.Year)
+                            {
+                                <option selected="selected">@i</option>
+                            } 
+                            else
+                            {
+                                <option>@i</option>
+                            }
+                    }
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="details">Toon details:</label>
+                @Html.CheckBoxFor(model => model.Details)
+            </div>
+            <button type="submit" class="btn btn-primary">Zoeken</button>
+            <input type="hidden" id="table" name="table" value="combined">
+        </form>
+    }
+    else if ((string)ViewData["table"]! == "combined")
+    {
+        if (Model.Details)
+        {
+            <p>aantal: @ViewData["count"]</p>
+        } else
+        {
+            <h2>Gecombineerde Gegevens (BKFP + BSEG)</h2>
+            <table border="1" class="table">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Bedrijfsnummer (BUKRS)</th>
+                        <th>Documentnummer (BELNR)</th>
+                        <th>Boekjaar (GJAHR)</th>
+                        <th>Regelnummer (BUZEI)</th>
+                        <th>Documentsoort (BLART)</th>
+                        <th>Documentdatum (BLDAT)</th>
+                        <th>Boekingssleutel (BSCHL)</th>
+                        <th>Datum van vereffening (AUGDT)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.BKFP)
+                    {
+                        <tr>
+                            <td>BKFP</td>
+                            <td>@item.BUKRS</td>
+                            <td>@item.BELNR</td>
+                            <td>@item.GJAHR</td>
+                            <td>N/A</td>
+                            <td>@item.BLART</td>
+                            <td>@item.BLDAT</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                        </tr>
+                    }
+                    @foreach (var item in Model.BSEG)
+                    {
+                        <tr>
+                            <td>BSEG</td>
+                            <td>@item.BUKRS</td>
+                            <td>@item.BELNR</td>
+                            <td>@item.GJAHR</td>
+                            <td>@item.BUZEI</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>@item.BSCHL</td>
+                            <td>@item.AUGDT</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+
+    }
+    else if ((string)ViewData["table"]! == "BKFP")
+    {
+        <h2>BKFP Gegevens</h2>
+        <table border="1" class="table">
+            <thead>
+                <tr>
+                    <th>Bedrijfsnummer (BUKRS)</th>
+                    <th>Documentnummer (BELNR)</th>
+                    <th>Boekjaar (GJAHR)</th>
+                    <th>Documentsoort (BLART)</th>
+                    <th>Documentdatum (BLDAT)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.BKFP)
+                {
+                    <tr>
+                        <td>@item.BUKRS</td>
+                        <td>@item.BELNR</td>
+                        <td>@item.GJAHR</td>
+                        <td>@item.BLART</td>
+                        <td>@item.BLDAT</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else if ((string)ViewData["table"]! == "BSEG")
+    {
+        <h2>BSEG Gegevens</h2>
+        <table border="1" class="table">
+            <thead>
+                <tr>
+                    <th>Bedrijfsnummer (BUKRS)</th>
+                    <th>Documentnummer (BELNR)</th>
+                    <th>Boekjaar (GJAHR)</th>
+                    <th>Nummer van boekingsregel (BUZEI)</th>
+                    <th>Boekingssleutel (BSCHL)</th>
+                    <th>Datum van vereffening (AUGDT)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.BSEG)
+                {
+                    <tr>
+                        <td>@item.BUKRS</td>
+                        <td>@item.BELNR</td>
+                        <td>@item.GJAHR</td>
+                        <td>@item.BUZEI</td>
+                        <td>@item.BSCHL</td>
+                        <td>@item.AUGDT</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</body>
+</html>
