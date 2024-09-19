@@ -263,3 +263,4 @@ C:\Users\wanne\Documents\GitHub\BoekhoudAssistent\obj\Debug\net8.0\refint\Boekho
 C:\Users\wanne\Documents\GitHub\BoekhoudAssistent\obj\Debug\net8.0\BoekhoudAssistent.pdb
 C:\Users\wanne\Documents\GitHub\BoekhoudAssistent\obj\Debug\net8.0\BoekhoudAssistent.genruntimeconfig.cache
 C:\Users\wanne\Documents\GitHub\BoekhoudAssistent\obj\Debug\net8.0\ref\BoekhoudAssistent.dll
+C:\Users\wanne\Documents\GitHub\BoekhoudAssistent\obj\Debug\net8.0\BoekhoudAssistent.sourcelink.json

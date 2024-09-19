@@ -26,8 +26,48 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\wanne\Documents\GitHub\BoekhoudAssistent
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/wanne/Documents/GitHub/BoekhoudAssistent/Views/BKFPs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQktGUHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/wanne/Documents/GitHub/BoekhoudAssistent/Views/BKFPs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQktGUHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/wanne/Documents/GitHub/BoekhoudAssistent/Views/BKFPs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQktGUHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/wanne/Documents/GitHub/BoekhoudAssistent/Views/BKFPs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQktGUHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/wanne/Documents/GitHub/BoekhoudAssistent/Views/BKFPs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQktGUHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/wanne/Documents/GitHub/BoekhoudAssistent/Views/Boekhoud/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9la2hvdWRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/wanne/Documents/GitHub/BoekhoudAssistent/Views/BSEGs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQlNFR3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/wanne/Documents/GitHub/BoekhoudAssistent/Views/BSEGs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQlNFR3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/wanne/Documents/GitHub/BoekhoudAssistent/Views/BSEGs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQlNFR3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/wanne/Documents/GitHub/BoekhoudAssistent/Views/BSEGs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQlNFR3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/wanne/Documents/GitHub/BoekhoudAssistent/Views/BSEGs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQlNFR3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/wanne/Documents/GitHub/BoekhoudAssistent/Views/Shared/Error.cshtml]

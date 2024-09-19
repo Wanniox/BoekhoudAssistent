@@ -1,0 +1,73 @@
+﻿@model BoekhoudAssistent.Models.BSEG
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>BSEG</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BUKRS" class="control-label"></label>
+                <input asp-for="BUKRS" class="form-control" />
+                <span asp-validation-for="BUKRS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BELNR" class="control-label"></label>
+                <input asp-for="BELNR" class="form-control" />
+                <span asp-validation-for="BELNR" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GJAHR" class="control-label"></label>
+                <input asp-for="GJAHR" class="form-control" />
+                <span asp-validation-for="GJAHR" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BUZEI" class="control-label"></label>
+                <input asp-for="BUZEI" class="form-control" />
+                <span asp-validation-for="BUZEI" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BUZID" class="control-label"></label>
+                <input asp-for="BUZID" class="form-control" />
+                <span asp-validation-for="BUZID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AUGDT" class="control-label"></label>
+                <input asp-for="AUGDT" class="form-control" />
+                <span asp-validation-for="AUGDT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AUGCP" class="control-label"></label>
+                <input asp-for="AUGCP" class="form-control" />
+                <span asp-validation-for="AUGCP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AUGBL" class="control-label"></label>
+                <input asp-for="AUGBL" class="form-control" />
+                <span asp-validation-for="AUGBL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BSCHL" class="control-label"></label>
+                <input asp-for="BSCHL" class="form-control" />
+                <span asp-validation-for="BSCHL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
