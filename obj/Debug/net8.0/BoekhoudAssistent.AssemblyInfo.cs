@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BoekhoudAssistent")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e0a446627bff9e333beaa4c45f82eb05bda9591")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+82e0ebcb65ec138e3e1a731ac5fd92a0968dd7a4")]
 [assembly: System.Reflection.AssemblyProductAttribute("BoekhoudAssistent")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BoekhoudAssistent")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
