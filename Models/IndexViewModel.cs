@@ -2,7 +2,6 @@
 {
     public class IndexViewModel
     {
-        public string? Table { get; set; }
         public List<string>? GJAHRList { get; set; }
         public List<string>? BUKRSList { get; set; }
         public List<string>? BELNRList { get; set; }

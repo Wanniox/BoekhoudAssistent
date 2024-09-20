@@ -31,7 +31,6 @@ namespace BoekhoudAssistent.Controllers
             int belnrStart = Int32.Parse(BELNR);
             int belnrEnd = Int32.Parse(BELNR2);
 
-            // Use IQueryable to build the queries with filters applied before executing them
             IQueryable<BKFP> BKFPQuery = GetBKFPQueryable()
                 .Where(item =>
                     (GJAHR == null || GJAHR == "Niet gespecificeerd" || GJAHR == item.GJAHR.ToString()) &&
@@ -44,14 +43,11 @@ namespace BoekhoudAssistent.Controllers
                     (BUKRS == null || BUKRS == "Niet gespecificeerd" || BUKRS == item.BUKRS.ToString()) &&
                     belnrStart <= item.BELNR && item.BELNR <= belnrEnd);
 
-            // Execute the queries and get the filtered results as lists
             List<BKFP> correctBKFP = await BKFPQuery.ToListAsync();
             List<BSEG> correctBSEG = await BSEGQuery.ToListAsync();
 
-            // Count the total number of matching entries
             int count = correctBKFP.Count + correctBSEG.Count;
 
-            // Generate unique lists of BUKRS, BELNR, and GJAHR from both BKFP and BSEG
             var BUKRSList = correctBKFP.Select(item => item.BUKRS.ToString())
                             .Union(correctBSEG.Select(item => item.BUKRS.ToString()))
                             .Distinct().OrderBy(bukrs => bukrs).ToList();
@@ -64,14 +60,11 @@ namespace BoekhoudAssistent.Controllers
                             .Union(correctBSEG.Select(item => item.GJAHR.ToString()))
                             .Distinct().OrderBy(gjahr => gjahr).ToList();
 
-            // Populate the ViewData for count and table
             ViewData["count"] = count;
             ViewData["table"] = table;
 
-            // Prepare the ViewModel
             var ViewModel = new IndexViewModel
             {
-                Table = table,
                 GJAHRList = GJAHRList,
                 BUKRSList = BUKRSList,
                 BELNRList = BELNRList,
